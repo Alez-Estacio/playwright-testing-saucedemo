@@ -1,62 +1,142 @@
-# Challenge - Pruebas Automatizadas con Playwright
+# Playwright E2E Test Automation Challenge
 
-Este proyecto implementa pruebas automatizadas de extremo a extremo utilizando [Playwright](https://playwright.dev/) para validar funcionalidades en la web de ejemplo https://www.saucedemo.com.
+## Overview
 
-## Requisitos previos
+This repository contains an end-to-end test automation project built with **Playwright** to validate key user flows on the [SauceDemo](https://www.saucedemo.com/) sample web application.
 
-- Node.js (versión 14 o superior)
-- npm (gestor de paquetes)
+The project is designed using the **Page Object Model (POM)** pattern to keep test code maintainable, reusable, and easy to scale. Test data is managed through JSON fixtures, and execution evidence is generated through reports and screenshots.
 
-## Instalación
+## Tech Stack
 
-1. Clona este repositorio en tu máquina local.
-2. Instala las dependencias ejecutando:
-   ```bash
-   npm install
-   ```
+* Playwright
+* JavaScript
+* Node.js
+* npm
+* Page Object Model
+* JSON fixtures
+* HTML test reports
 
-## Estructura del proyecto
+## Prerequisites
 
-- `fixtures/` → Datos de prueba y archivos JSON
-- `pages/` → Modelos de página (Page Objects)
-- `tests/` → Pruebas automatizadas
-- `utils/` → Utilidades y funciones auxiliares
-- `reports/` → Evidencias y reportes generados
-- `playwright.config.js` → Configuración de Playwright
-- `package.json` → Dependencias y scripts
+Before running the project, make sure you have the following installed:
 
-## Ejecución de pruebas
+* Node.js 18 or later
+* npm
+* Git
 
-- Para ejecutar todas las pruebas:
-  ```bash
-  npx playwright test
-  ```
-- Para ejecutar pruebas en un navegador específico:
-  ```bash
-  npx playwright test --project=chromium
-  npx playwright test --project=firefox
-  npx playwright test --project=webkit
-  ```
-- Para abrir la interfaz gráfica de Playwright Test Runner:
-  ```bash
-  npx playwright test --ui
-  ```
+> Node.js 20+ is recommended for better compatibility with modern Playwright versions.
 
-## Reportes y evidencias
+## Installation
 
-- Los reportes en formato HTML se generan automáticamente tras la ejecución de pruebas.
-- Para visualizar el reporte:
-  ```bash
-  npx playwright show-report
-  ```
-- Las capturas de pantalla de fallos se almacenan en `reports/screenshots/`.
+Clone the repository:
 
-## Configuración
+```bash
+git clone https://github.com/Alez-Estacio/playwright-testing-saucedemo.git
+```
 
-- La configuración principal se encuentra en `playwright.config.js`.
-- Puedes modificar el directorio de pruebas, navegadores, baseURL y otras opciones según tus necesidades.
+Navigate to the project folder:
 
-## Notas adicionales
+```bash
+cd playwright-testing-saucedemo
+```
 
-- El proyecto utiliza el patrón Page Object para mantener el código de pruebas organizado y reutilizable.
-- Los datos de prueba se gestionan mediante archivos JSON en la carpeta `fixtures`.
+Install project dependencies:
+
+```bash
+npm install
+```
+
+Install Playwright browser binaries:
+
+```bash
+npx playwright install
+```
+
+## Project Structure
+
+```text
+playwright-testing-saucedemo/
+├── fixtures/              # Test data and JSON files
+├── pages/                 # Page Object Model classes
+├── tests/                 # Automated test cases
+├── utils/                 # Utility functions and helpers
+├── reports/               # Generated reports and test evidence
+│   └── screenshots/       # Failure screenshots
+├── playwright.config.js   # Playwright configuration
+├── package.json           # Dependencies and npm scripts
+└── README.md              # Project documentation
+```
+
+## Running Tests
+
+Run all tests:
+
+```bash
+npx playwright test
+```
+
+Run tests in a specific browser:
+
+```bash
+npx playwright test --project=chromium
+```
+
+```bash
+npx playwright test --project=firefox
+```
+
+```bash
+npx playwright test --project=webkit
+```
+
+Run tests using Playwright UI Mode:
+
+```bash
+npx playwright test --ui
+```
+
+## Reports and Evidence
+
+After test execution, Playwright can generate an HTML report with the test results.
+
+Open the latest HTML report:
+
+```bash
+npx playwright show-report
+```
+
+Failure screenshots are stored in:
+
+```text
+reports/screenshots/
+```
+
+## Configuration
+
+The main Playwright configuration is located in:
+
+```text
+playwright.config.js
+```
+
+From this file, you can configure:
+
+* Test directory
+* Browser projects
+* Base URL
+* Timeouts
+* Reporters
+* Screenshots
+* Traces
+* Retries
+
+## Test Design
+
+This project follows the **Page Object Model** pattern to separate test logic from page interactions. This approach improves readability, reduces code duplication, and makes the automation framework easier to maintain.
+
+Test data is handled through JSON files located in the `fixtures/` directory, allowing test scenarios to be updated without modifying the test logic.
+
+## Author
+
+**Alezander Estacio**
+QA Automation Engineer
