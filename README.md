@@ -139,4 +139,5 @@ Test data is handled through JSON files located in the `fixtures/` directory, al
 ## Author
 
 **Alezander Estacio**
+
 QA Automation Engineer
